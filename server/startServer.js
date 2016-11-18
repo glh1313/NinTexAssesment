@@ -31,10 +31,4 @@ function startApp (config) {
     new ServerController(app, config);
 }
 
-/**
- * Loads the configuration file then passes the
- * config object into the start application function.
- **/
-startApp({
-
-});
+module.exports = startApp;
