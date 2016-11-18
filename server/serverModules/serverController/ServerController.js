@@ -14,7 +14,9 @@ var RouteController = require('./RouteController');
 
 function serverController(app, config) {
 
-    new RouteController(app, config);
+    app.get('/', function (req, res) {
+        res.send('This is a start!');
+    });
 
     app.listen(3000, function () {
         console.log('Server started');
