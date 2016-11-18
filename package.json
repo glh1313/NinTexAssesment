@@ -1,0 +1,41 @@
+{
+  "name": "nintexAssesment",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "webpack-dev-server --progress --colors",
+    "build": "webpack --progress --colors"
+  },
+  "dependencies": {
+    "babel-core": "*",
+    "babel-loader": "*",
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-polyfill": "*",
+    "babel-preset-es2015": "*",
+    "babel-preset-react": "*",
+    "babel-preset-stage-2": "*",
+    "body-parser": "*",
+    "css-loader": "^0.23.1",
+    "express": "*",
+    "filecache": "*",
+    "html-webpack-plugin": "*",
+    "node-sass": "^3.8.0",
+    "react": "*",
+    "react-bootstrap": "^0.30.2",
+    "react-dom": "*",
+    "sass-loader": "^4.0.0",
+    "webpack": "1.13.3",
+    "webpack-dev-server": "*",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react",
+      "stage-2"
+    ],
+    "plugins": [
+      "transform-object-rest-spread"
+    ]
+  }
+}
