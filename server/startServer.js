@@ -5,8 +5,8 @@
  * Setup for the application.
  **/
 var express = require('express'),
-    bodyParser = require('body-parser'),
-    ServerController = require('./serverModules/serverController/ServerController');
+    bodyParser = require('body-parser');
+    // ServerController = require('./serverModules/serverController/ServerController');
     // loggingManagement = require('./serverModules/loggingManagement/LoggingManagement');
 
 /**
@@ -21,14 +21,22 @@ function startApp (config) {
 
 
     app.set('env', 'production');
-    app.set('port', process.env.PORT || 3000);
+    app.set('port', process.env.port || 3000);
     app.disable('etag');
 
     // loggingManagement(app, config);
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));
 
-    new ServerController(app, config);
+    // new ServerController(app, config);
+
+    app.get('/', function (req, res) {
+        res.send('This is a start too!');
+    });
+
+    app.listen(3000, function () {
+        console.log('Server started');
+    });
 }
 
 module.exports = startApp;
