@@ -34,7 +34,7 @@ function startApp (config) {
         res.send('This is a start too!');
     });
 
-    app.listen(3000, function () {
+    app.listen(app.get('port'), function () {
         console.log('Server started');
     });
 }
