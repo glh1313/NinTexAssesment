@@ -15,7 +15,7 @@ var path = require('path');
 function root(app, config) {
     app.get('/', function (req, res) {
         // res.sendFile(path.resolve(__dirname, '../../../application/build/index.html'));
-        res.send('This is a start!');
+        res.send('This is a start all the way!');
     });
 }
 
