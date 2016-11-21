@@ -7,6 +7,8 @@
     "engine": {"Node":  "7.1.0"}
   },
   "dependencies": {
+    "async": "*",
+    "azure-storage": "*",
     "babel-core": "*",
     "babel-loader": "*",
     "babel-plugin-transform-object-rest-spread": "^6.8.0",
@@ -20,6 +22,7 @@
     "filecache": "*",
     "html-webpack-plugin": "*",
     "node-sass": "^3.8.0",
+    "random-js": "*",
     "react": "*",
     "react-bootstrap": "^0.30.2",
     "react-dom": "*",
