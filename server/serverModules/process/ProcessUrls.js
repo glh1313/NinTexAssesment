@@ -2,7 +2,6 @@
 var key = '3p2Os4obOCO5u04SCLItvm77uCOcIswFdsCp7vpnvFsS2Sw6Tb/0LMtuaGfS3dO0NQdBYbkAIVMvdG+Dkbu/2Q==',
     account = 'glhbit',
     tableName = 'urllookup',
-    baseUrl = 'http://glhbit.tk';
     AzureTableServiceUtils = require('../../utils/AzureTableServiceUtils'),
     keyCreator = require('../../utils/keyCreator'),
     tableUtils = new AzureTableServiceUtils(account, key),
