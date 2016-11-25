@@ -7,6 +7,7 @@ var path = require('path'),
 
 function root(app, config) {
     app.get('/*', function (req, res, next) {
+        console.log('We have a request for: ' + req.originalUrl);
         if (req.originalUrl !== "/" && req.originalUrl !== '/__webpack_hmr' && req.originalUrl !=='/favicon.ico' && req.originalUrl !=='/create') {
             console.log('Incoming URL: ' + baseUrl + req.originalUrl);
             proccess(baseUrl + req.originalUrl, function (error, results) {

@@ -14,6 +14,7 @@ var path = require('path');
 
 function root(app, config) {
     app.get('/', function (req, res) {
+        console.log('We have a request for root.');
         res.sendFile(path.resolve(__dirname, '../../../application/build/index.html'));
     });
 }
