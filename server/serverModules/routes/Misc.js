@@ -3,7 +3,7 @@
  */
 var path = require('path'),
     proccess = require('../process/ProcessUrls'),
-    baseUrl = 'http://glhbit.tx';
+    baseUrl = 'http://glhbit.tk';
 
 var excludeList = {
     '/server.js/debug': true,
