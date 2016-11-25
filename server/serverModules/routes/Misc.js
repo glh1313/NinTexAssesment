@@ -25,10 +25,10 @@ function root(app, config) {
             proccess(requestedUrl, function (error, results) {
                 if (!error && results) {
 
-                    console.log('Outging URL: ' + results.Url);
+                    console.log('Outgoing URL: ' + results.Url);
 
                     // res.statusCode(301);
-                    res.redirect(results.Url);
+                    res.redirect(301, results.Url);
                 } else {
                     res.statusCode(404).end();
                 }
