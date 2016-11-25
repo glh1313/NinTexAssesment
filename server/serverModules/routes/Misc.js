@@ -27,7 +27,7 @@ function root(app, config) {
 
                     console.log('Outging URL: ' + results.Url);
 
-                    res.statusCode(301);
+                    // res.statusCode(301);
                     res.redirect(results.Url);
                 } else {
                     res.statusCode(404).end();
