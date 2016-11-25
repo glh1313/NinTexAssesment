@@ -19,7 +19,6 @@ var express = require('express'),
 function startApp (config) {
     var app = express();
 
-
     app.set('env', 'production');
     app.set('port', process.env.port || 3000);
     app.disable('etag');
@@ -38,7 +37,7 @@ function startApp (config) {
         process.exit(1);
     });
 
-    console.log('Deployment check 2');
+    console.log('Deployment check 3');
 }
 
 module.exports = startApp;
