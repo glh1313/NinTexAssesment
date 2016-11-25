@@ -36,8 +36,6 @@ function startApp (config) {
         console.error(error.stack);
         process.exit(1);
     });
-
-    console.log('Deployment check 6');
 }
 
 module.exports = startApp;

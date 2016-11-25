@@ -2,28 +2,31 @@
  * Created by Grant on 11/18/16.
  */
 var path = require('path'),
-    proccess = require('../process/ProcessUrls'),
-    baseUrl = 'http://glhbit.tk';
+    url = require('url'),
+    proccess = require('../process/ProcessUrls');
 
 var excludeList = {
     '/server.js/debug': true,
     '/favicon.ico': true,
-    '/create': true,
+    '/__webpack_hmr': true,
     '/': true
 };
 
 
 function root(app, config) {
     app.get('/*', function (req, res, next) {
-        console.log('We have a request for: ' + req.originalUrl);
-        console.log(req.url);
-        console.log(req.headers);
+        var requestedUrl = req.headers.referer ? req.headers.referer : 'http://localhost:' + app.get('port') + req.originalUrl,
+            incomingUrlObject = url.parse(requestedUrl);
 
-        if ((excludeList[req.originalUrl] ? false : true)) {
-            console.log('Incoming URL: ' + baseUrl + req.originalUrl);
-            proccess(baseUrl + req.originalUrl, function (error, results) {
+        console.log('We have a request for: ' + requestedUrl);
+
+        if ((excludeList[incomingUrlObject.path] ? false : true)) {
+            console.log('Incoming URL: ' + requestedUrl);
+            proccess(requestedUrl, function (error, results) {
                 if (!error && results) {
-                    console.log('Outging URL: ' + baseUrl + req.originalUrl);
+
+                    console.log('Outging URL: ' + results.Url);
+
                     res.statusCode(301);
                     res.redirect(results.Url);
                 } else {
