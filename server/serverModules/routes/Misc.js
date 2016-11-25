@@ -16,6 +16,7 @@ var excludeList = {
 function root(app, config) {
     app.get('/*', function (req, res, next) {
         console.log('We have a request for: ' + req.originalUrl);
+        console.log(req.header);
 
         if ((excludeList[req.originalUrl] ? false : true)) {
             console.log('Incoming URL: ' + baseUrl + req.originalUrl);
