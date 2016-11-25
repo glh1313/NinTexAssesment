@@ -24,11 +24,19 @@ function startApp (config) {
     app.set('port', process.env.port || 3000);
     app.disable('etag');
 
-    // loggingManagement(app, config);
     app.use(bodyParser.json());
-    // app.use(bodyParser.urlencoded({extended: true}));
 
     new ServerController(app, config);
+
+    app.on('error', function (error) {
+        console.log(error);
+    });
+
+    process.on('uncaughtException', function (error) {
+        console.error('Uncaught Exception: ', error.message);
+        console.error(error.stack);
+        process.exit(1);
+    });
 }
 
 module.exports = startApp;
