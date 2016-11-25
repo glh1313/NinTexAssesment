@@ -37,7 +37,7 @@ function startApp (config) {
         process.exit(1);
     });
 
-    console.log('Deployment check 5');
+    console.log('Deployment check 6');
 }
 
 module.exports = startApp;
