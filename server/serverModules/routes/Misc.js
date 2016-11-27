@@ -19,15 +19,14 @@ function root(app, config) {
             incomingUrlObject = url.parse(requestedUrl);
 
         console.log('We have a request for: ' + requestedUrl);
+        console.log(req.headers);
 
         if ((excludeList[incomingUrlObject.path] ? false : true)) {
             console.log('Incoming URL: ' + requestedUrl);
             proccess(requestedUrl, function (error, results) {
                 if (!error && results) {
-
                     console.log('Outgoing URL: ' + results.Url);
 
-                    // res.statusCode(301);
                     res.redirect(301, results.Url);
                 } else {
                     res.statusCode(404).end();
