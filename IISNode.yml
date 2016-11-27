@@ -134,7 +134,7 @@ flushResponse: false
 
 # enableXFF - controls whether iisnode adds or modifies the X-Forwarded-For request HTTP header with the IP address of the remote host
 
-enableXFF: false
+enableXFF: true
 
 # promoteServerVars - comma delimited list of IIS server variables that will be propagated to the node.exe process in the form of
 # x-iisnode-<server_variable_name>
