@@ -29,7 +29,9 @@ function root(app, config) {
 
                     res.redirect(301, results.Url);
                 } else {
-                    res.statusCode(404).end();
+                    res.statusCode = 404
+                    res.end();
+
                 }
             });
         } else {
