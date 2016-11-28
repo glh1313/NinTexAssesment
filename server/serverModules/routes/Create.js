@@ -5,7 +5,7 @@ function root(app, config) {
     app.post('/create', function (req, res, next) {
         var url = req.body.url;
         if (url) {
-            proccess(url, function (error, results) {
+            proccess(url, 'http://' + req.headers.host, function (error, results) {
                 if (!error && results) {
                     res.send(results);
                 } else {
