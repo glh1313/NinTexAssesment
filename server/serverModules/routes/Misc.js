@@ -15,15 +15,11 @@ var excludeList = {
 
 function root(app, config) {
     app.get('/*', function (req, res, next) {
-        var requestedUrl = req.headers.host ? req.headers.host : 'http://localhost:' + app.get('port') + req.originalUrl,
-            incomingUrlObject = url.parse(requestedUrl);
-
-        console.log('We have a request for: ' + requestedUrl);
+        console.log('We have a request for: ' + req.originalUrl);
         console.log(req.headers);
-        console.log('request: ' + req);
 
-        if ((excludeList[incomingUrlObject.path] ? false : true)) {
-            console.log('Incoming URL: ' + requestedUrl);
+        if ((excludeList[req.originalUrl] ? false : true)) {
+            console.log('Incoming URL: ' + req.headers.host + req.originalUrl);
             proccess(requestedUrl, function (error, results) {
                 if (!error && results) {
                     console.log('Outgoing URL: ' + results.Url);
