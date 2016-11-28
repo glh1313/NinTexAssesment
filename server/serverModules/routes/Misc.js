@@ -20,7 +20,7 @@ function root(app, config) {
 
         if ((excludeList[req.originalUrl] ? false : true)) {
             console.log('Incoming URL: ' + req.headers.host + req.originalUrl);
-            proccess(requestedUrl, function (error, results) {
+            proccess('http://' + req.headers.host + req.originalUrl, function (error, results) {
                 if (!error && results) {
                     console.log('Outgoing URL: ' + results.Url);
 
