@@ -20,6 +20,7 @@ function root(app, config) {
 
         console.log('We have a request for: ' + requestedUrl);
         console.log(req.headers);
+        console.log('request: ' + req);
 
         if ((excludeList[incomingUrlObject.path] ? false : true)) {
             console.log('Incoming URL: ' + requestedUrl);
