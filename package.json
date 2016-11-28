@@ -4,7 +4,7 @@
   "scripts": {
     "start": "webpack-dev-server --progress --colors",
     "build": "webpack --progress --colors",
-    "engine": {"Node":  "7.1.0"}
+    "engine": {"Node":  "6.2.2"}
   },
   "dependencies": {
     "async": "*",
