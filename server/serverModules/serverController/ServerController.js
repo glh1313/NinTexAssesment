@@ -17,7 +17,7 @@ function serverController(app, config) {
     new RouteController(app, config);
 
     app.listen(app.get('port'), function () {
-        console.log('Server started');
+        console.log('Server started and listening on port ' + app.get('port'));
     });
 }
 
