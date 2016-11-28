@@ -15,7 +15,7 @@ var excludeList = {
 
 function root(app, config) {
     app.get('/*', function (req, res, next) {
-        var requestedUrl = req.headers.referer ? req.headers.referer : 'http://localhost:' + app.get('port') + req.originalUrl,
+        var requestedUrl = req.headers.host ? req.headers.host : 'http://localhost:' + app.get('port') + req.originalUrl,
             incomingUrlObject = url.parse(requestedUrl);
 
         console.log('We have a request for: ' + requestedUrl);
