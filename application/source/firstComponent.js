@@ -4,6 +4,7 @@
 import React from 'react';
 import hitch from './base/hitch';
 import { Jumbotron, Button, FormControl, FormGroup, InputGroup, Form, Modal } from 'react-bootstrap';
+import validUrl from 'valid-url';
 
 class App extends React.Component {
     constructor(props) {
@@ -55,7 +56,15 @@ class App extends React.Component {
     }
 
     handleSubmit(event) {
-        this.submitUrlForShortening();
+        if (validUrl.isUri(this.state.value)) {
+            this.submitUrlForShortening();
+        } else {
+            this.setState({
+                modalHeader: 'Please enter a valid URL.',
+                message: 'There should be a valid URL to be shortened',
+                showModal: true
+            });
+        }
         event.preventDefault();
     }
 
